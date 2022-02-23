@@ -11,7 +11,7 @@ def test_pw(url, username,password):
     s=requests.Session()
     s.verify=False
     nsp=re.findall(r'nsp_str\s=\s"(.+?)"',s.get(url).text)[0]
-    ret = s.post(url,data={'page': 'auth',username: 'nagiosadmin','pageopt': 'login','loginButton': '','debug': '',
+    ret = s.post(url,data={'page': 'auth','username': username,'pageopt': 'login','loginButton': '','debug': '',
                          'password': password,"nsp": nsp},allow_redirects=False)
     if ret.status_code == 302:
         print(f'Password: {password}')
