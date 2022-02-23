@@ -28,7 +28,7 @@ if __name__ == '__main__':
     
     TPE = ThreadPoolExecutor()
     
-    for password in open('p').readlines():
+    for password in open(args.pass_file).readlines():
         while TPE._work_queue > 50000:
             time.sleep(1)
         TPE.submit(test_pw,args.username,password.strip('\n'))
