@@ -1,2 +1,1 @@
-# nagios-brute
-# nagios-brute
+provided for educational purposes only
